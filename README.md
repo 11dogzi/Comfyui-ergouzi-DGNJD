@@ -33,6 +33,9 @@ Prompt word template manager, which can quickly delete, save, and modify prompt 
 文本自由拼接节点，配合提示词模板使用更加自由的使用提示词   
 Free text splicing nodes, combined with prompt word templates for more flexible use of prompt words   
 ![提示词大师](docs/2文本拼接.png "2文本拼接")   
+可保存下列图像以加载工作流   
+The following images can be saved to load the workflow   
+![提示词大师](docs/workflow.png "提示词大师工作流")       
 
 
  ## 细化处理节点：
@@ -91,6 +94,7 @@ Mirror Flip
  ## 常规遮罩处理节点：
 Regular mask processing nodes:   
 ![常规遮罩](docs/5遮罩处理.png "5遮罩处理")   
+![常规遮罩](docs/5遮罩羽化.png "5遮罩羽化")  
 
  ## 百度翻译API：
 Baidu Translation API:   
@@ -100,8 +104,6 @@ Only the first use requires entering the ID and key
 
 ![百度翻译API](docs/6百度翻译API.png "6百度翻译API")   
 
-还有遮罩边缘羽化模糊等小件   
-There are also small pieces such as blurred feather on the edge of the mask   
 
 ## 更多SD免费教程
 More SD free tutorials   
