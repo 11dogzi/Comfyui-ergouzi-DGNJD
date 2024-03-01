@@ -1,0 +1,66 @@
+# My Project
+
+This project is a derivative work based on several open source projects:
+
+1. rgthree-comfy by rgthree (https://github.com/rgthree/rgthree-comfy)
+2. ComfyUI-Custom-Scripts by pythongosssss (https://github.com/pythongosssss/ComfyUI-Custom-Scripts)
+3. ComfyUI-Mixlab-Nodes by shadowcz007 (https://github.com/shadowcz007/comfyui-mixlab-nodes)
+
+Copyright (c) 2023 11dog（二狗子）
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+This project is also subject to the terms of the MIT license. See the LICENSE file for more details.
+
+Additional restrictions:
+
+- This project cannot be used for commercial purposes. Any use of the software, including but not limited to the sale, rental, or distribution of the software or derivative works, is strictly prohibited without the author's express written consent.
+
+- The software includes self-written code parts that cannot be sold, rented, or distributed separately or as part of derivative works without the author's express written consent.
+
+
+这个项目是基于几个开源项目的衍生作品：
+
+1.rgthree由rgthree舒适(https://github.com/rgthree/rgthree-comfy)
+
+2.CompyUI自定义脚本by pythongossss(https://github.com/pythongosssss/ComfyUI-Custom-Scripts)
+
+3.shadowcz007的ComfyUI Mixrab节点(https://github.com/shadowcz007/comfyui-mixlab-nodes)
+
+版权所有（c）2023 11dog(二狗子）
+
+特此免费向任何获得副本的人授予许可
+
+该软件和相关文档文件（“软件”），以处理在软件中不受限制，包括但不限于权利使用、复制、修改、合并、发布、分发、分许可和/或销售软件的副本，并允许软件的使用者
+
+按照以下条件提供：
+
+上述版权声明和本许可声明应包含在软件的副本或实质部分。
+
+软件是“按原样”提供的，没有任何形式的担保，明示或隐含的，包括但不限于适销性保证，
+
+适用于特定目的和不侵权。在任何情况下作者或版权持有人应对任何索赔、损害或其他责任，无论是在合同诉讼、侵权行为还是其他方面，出于或与软件有关，或使用或其他交易软件。
+
+该项目还受麻省理工学院许可证条款的约束。有关更多详细信息，请参阅许可证文件。
+
+其他限制：
+
+-该项目不能用于商业目的。您不能以营利为目的出售、出租或分发软件或衍生作品。
+
+-该项目可以用于其他开源项目，但必须保留本声明和投稿作者的原始版权声明。
