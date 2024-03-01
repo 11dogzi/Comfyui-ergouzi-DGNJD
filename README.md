@@ -27,7 +27,7 @@ Hello! I am Er Gouzi （2🐕）！ This is a multifunctional custom node kit fr
 通过涂抹需修复区域完成任意局部修复
 ![细节修复](docs/1细节优化.png "1细节优化")
 
-![细节修复](docs/修复前.png "修复前") ![细节修复](docs/修复后.png "修复后") ![细节修复](docs/局部修复前.png "局部修复前") ![细节修复](docs/局部修复前.png "局部修复后")
+![细节修复](docs/修复前.png "修复前") ![细节修复](docs/修复后.png "修复后") ![细节修复](docs/局部修复前.png "局部修复前") ![细节修复](docs/局部修复后.png "局部修复后")
 
 可保存下列图像以加载工作流
 
