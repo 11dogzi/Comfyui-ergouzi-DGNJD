@@ -11,6 +11,7 @@ cd /path/to/your/ComfyUI/custom_nodes
 ```git
 git clone https://github.com/11dogzi/Comfyui-ergouzi-DGNJD.git
 
+
  ## 节点介绍
 提示词大师：
 众多可选类型提示词节点，可随机
