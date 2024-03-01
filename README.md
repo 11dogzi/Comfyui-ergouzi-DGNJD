@@ -64,7 +64,7 @@ Hello! I am Er Gouzi （2🐕）！ This is a multifunctional custom node kit fr
 仅第一次使用需要输入id和key
 申请百度翻译API，请访问：[百度翻译API申请链接](https://fanyi-api.baidu.com/?aldtype=16047&ext_channel=Aldtype&fr=pcHeader)
 
-![百度翻译API](/6百度翻译API.png "6百度翻译API")
+![百度翻译API](docs/6百度翻译API.png "6百度翻译API")
 
 还有遮罩边缘羽化模糊等小件
 
@@ -73,7 +73,7 @@ Hello! I am Er Gouzi （2🐕）！ This is a multifunctional custom node kit fr
 
 欢迎加入我们的QQ频道，点击这里进入：[二狗子的QQ频道](https://pd.qq.com/s/3d9ys5wpr)
 
-![细节修复](/image.png "LOGO1")
+![细节修复](docs/LOGO1.png "LOGO1")
 
 
 
