@@ -4,5 +4,5 @@ torchvision
 Pillow
 numpy
 scipy
-skimage
+scikit-image
 opencv-python
