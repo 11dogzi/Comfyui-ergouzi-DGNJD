@@ -50,7 +50,7 @@ Local repair
 Complete any local repair by applying the area to be repaired   
 ![细节修复](docs/1细节优化.png "1细节优化")   
 
-![细节修复](docs/修复前.png "修复前") ![细节修复](docs/修复后.png "修复后")    
+![细节修复](docs/修复前原图.png "修复前原图") ![细节修复](docs/修复后.png "修复后")    
 ![细节修复](docs/局部修复前.png "局部修复前") ![细节修复](docs/局部修复后.png "局部修复后")   
 
 可保存下列图像以加载工作流   
