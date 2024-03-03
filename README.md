@@ -81,8 +81,8 @@ Conventional image processing nodes:
 现在我们可以指定图像的保存路径了！   
 Specify image save path:   
 ![常规图像](docs/4图像指定保存路径.png "4图像指定保存路径")   
-颜色迁移，注意部分迁移需保证图像大小一致！   
-Color migration, please note that some migrations must ensure consistent image size!   
+颜色迁移   
+Color migration   
 ![常规图像](docs/4颜色迁移.png "4颜色迁移")   
 图像尺寸获取   
 Image size acquisition   

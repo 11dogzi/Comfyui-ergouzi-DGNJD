@@ -29,7 +29,7 @@ class EGJXFZNODE:
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("图像",)
     FUNCTION = "image_flip"
-    CATEGORY = "2🐕/图像/常规处理"
+    CATEGORY = "2🐕/图像"
 
     def image_flip(self, 输入图像, 方向):
         batch_tensor = []

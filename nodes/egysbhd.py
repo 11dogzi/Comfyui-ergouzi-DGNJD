@@ -37,29 +37,33 @@ class EGSCQYBHDQYYNode:
     FUNCTION = "transfer_saturation"
     CATEGORY = "2🐕/图像/色彩处理"
     def transfer_saturation(self, source_image, target_image):
-        
         source_pil = tensor_to_pil(source_image)
         target_pil = tensor_to_pil(target_image)
+        source_size = source_pil.size
+        target_size = target_pil.size
         
-        source_np = np.array(source_pil)
+        if source_size != target_size:
+            source_pil = ImageOps.fit(source_pil, target_size, Image.LANCZOS)
+            source_np = np.array(source_pil)
+        else:
+            source_np = np.array(source_pil)
+        
         target_np = np.array(target_pil)
-        
         
         source_hsv = cv2.cvtColor(source_np, cv2.COLOR_RGB2HSV)
         target_hsv = cv2.cvtColor(target_np, cv2.COLOR_RGB2HSV)
         
-        
         matched_target_hsv = target_hsv.copy()
         matched_target_hsv[:, :, 1] = source_hsv[:, :, 1]
         
-        
         matched_target_rgb = cv2.cvtColor(matched_target_hsv, cv2.COLOR_HSV2RGB)
-        
         
         matched_target_pil = Image.fromarray(np.clip(matched_target_rgb * 255, 0, 255).astype(np.uint8))
         
         result_tensor = pil_to_tensor(matched_target_pil)
+        
         return (result_tensor,)
+
     
 NODE_CLASS_MAPPINGS = { "EG_SCQY_BHDQY": EGSCQYBHDQYYNode }
 NODE_DISPLAY_NAME_MAPPINGS = { "EG_SCQY_BHDQY": "2🐕图像饱和度迁移" }
