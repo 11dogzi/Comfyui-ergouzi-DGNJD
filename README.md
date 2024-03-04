@@ -15,10 +15,11 @@ Replace/path/to/your/ComfyUI with the actual path where your ComfyUI project is 
 接下来，克隆ergouzi-DGNJD仓库：   
 Next, clone the ergouzi DGNJD repository:   
 
-```git clone https://github.com/11dogzi/Comfyui-ergouzi-DGNJD.git```
+```git clone https://github.com/11dogzi/Comfyui-ergouzi-Nodes.git```
 
-## 节点介绍
-Node Introduction 
+## 节点介绍   
+Node Introduction   
+如果你需要中文版可以到[二狗子的节点组中文版](https://github.com/11dogzi/Comfyui-ergouzi-DGNJD)     
  ## 提示词大师：
 Hint Word Master:   
 众多可选类型提示词节点，可随机   
@@ -80,8 +81,12 @@ Whether it's generating text watermarks or uploading finished product watermarks
 Conventional image processing nodes:   
 现在我们可以指定图像的保存路径了！   
 Specify image save path:   
-![常规图像](docs/4图像指定保存路径.png "4图像指定保存路径")   
-颜色迁移   
+![常规图像](docs/4图像指定保存路径.png "4图像指定保存路径")  
+加载任意图像！文件或者文件夹！包括psd，而且可以实时更新！    
+Load any image! File or folder! Including PSD, and can be updated in real-time!    
+![加载任意图像](docs/加载任意图像.png "加载任意图像")     
+![加载任意图像](docs/加载任意图像2.png "加载任意图像2")     
+颜色迁移     
 Color migration   
 ![常规图像](docs/4颜色迁移.png "4颜色迁移")   
 图像尺寸获取   
