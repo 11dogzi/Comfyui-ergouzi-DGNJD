@@ -36,6 +36,7 @@ from .nodes.egtxzdljjz import EGJZRYTX
 from .nodes.egtxcglj import EGTXLJNode
 from .nodes.egtxystz import EGHTYSTZNode
 from .nodes.egtxwhlj import EGWHLJ
+from .nodes.egzzcjpj import EGZZHBCJNode
 
 # A dictionary that contains all nodes you want to export with their names
 # NOTE: names should be globally unique
@@ -78,6 +79,7 @@ NODE_CLASS_MAPPINGS = {
     "EG_TX_LJ" : EGTXLJNode,
     "EG_HT_YSTZ" : EGHTYSTZNode,
     "EG_TX_WHLJ" : EGWHLJ,
+    "EG_ZZHBCJ" : EGZZHBCJNode,
 }
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
@@ -120,4 +122,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_TX_LJ" : "2🐕常规滤镜",
     "EG_HT_YSTZ" : "2🐕调整图像颜色",
     "EG_TX_WHLJ" : "2🐕网红滤镜",
+    "EG_ZZHBCJ" : "2🐕遮罩合并裁剪",
 }
