@@ -104,8 +104,6 @@ class EGSJNode:
         prompt = ','.join(prompt_parts).strip()
         prompt += ','
         return (prompt,) if prompt else ('',)
-NODE_CLASS_MAPPINGS = { "EG_SJ" : EGSJNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_SJ" : "2🐕任选种类随机提示词" }
 
 
 

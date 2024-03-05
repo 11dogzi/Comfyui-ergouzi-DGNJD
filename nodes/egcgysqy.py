@@ -59,6 +59,3 @@ class EGSCQYQBQYNode:
         
         result_tensor = pil_to_tensor(matched_target_pil)
         return (result_tensor,)
-
-NODE_CLASS_MAPPINGS = { "EG_SCQY_QBQY": EGSCQYQBQYNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_SCQY_QBQY": "2🐕常规颜色迁移" }

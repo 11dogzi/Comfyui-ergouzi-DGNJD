@@ -71,6 +71,3 @@ class EGJFZZSC:
         m3 = combine(m1, m2, 0, 0)
 
         return (m3,)
-
-NODE_CLASS_MAPPINGS = { "EG_JF_ZZSC" : EGJFZZSC }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_JF_ZZSC" : "2🐕接缝遮罩生成器" }

@@ -85,9 +85,6 @@ class EGTSCDSJTLNode:
         prompt += ','
         return (prompt,) if prompt else ('',)
 
-NODE_CLASS_MAPPINGS = { "EG_TSCDS_JT" : EGTSCDSJTLNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_TSCDS_JT" : "2🐕提示词大师镜头类" }
-
 
 
 

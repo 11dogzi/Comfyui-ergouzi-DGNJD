@@ -208,7 +208,5 @@ class EGYSZTNode:
                                              旋转角度, 旋转中心)
         输入原图_out = Image.composite(text_输入原图, back_输入原图, rotated_text_mask)
         return (pil2tensor(输入原图_out),)
-NODE_CLASS_MAPPINGS = { "EG-YSZT-ZT" : EGYSZTNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG-YSZT-ZT" : "2🐕文字水印添加" }
 
 

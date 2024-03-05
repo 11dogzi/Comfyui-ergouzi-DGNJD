@@ -49,6 +49,3 @@ class EGCJPJNode:
         pasted_image_tensor = pil2tensor(original_image_pil)
 
         return (pasted_image_tensor,)
-
-NODE_CLASS_MAPPINGS = { "EG_TX_CJPJ": EGCJPJNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_TX_CJPJ": "2🐕图像裁剪数据拼接" }

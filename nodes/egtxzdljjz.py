@@ -83,8 +83,6 @@ class EGJZRYTX:
         except Exception as e:
             print(f"2🐕温馨提示处理图像时出错请重置节点：{e}")
         return None, None
-NODE_CLASS_MAPPINGS = { "EG_TX_JZRY" : EGJZRYTX }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_TX_JZRY" : "2🐕加载任意图像" }
 
 
 

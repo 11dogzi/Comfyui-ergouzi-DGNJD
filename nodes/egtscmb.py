@@ -93,10 +93,6 @@ class EGTSCMBGLNode:
         else:
             return ("2🐕不清楚你的神操作,更多SD教程尽在B站@灵仙儿和二狗子",)
             print("2🐕不清楚你的神操作,更多SD教程尽在B站@灵仙儿和二狗子")
-        
-
-NODE_CLASS_MAPPINGS = { "EG_TSCMB_GL" : EGTSCMBGLNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_TSCMB_GL" : "2🐕提示词模板管理大师" }
 
 
 

@@ -43,9 +43,6 @@ class EGJXFZNODE:
         batch_tensor = torch.cat(batch_tensor, dim=0)
         return (batch_tensor, )
 
-NODE_CLASS_MAPPINGS = { "EG_JXFZ_node": EGJXFZNODE }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_JXFZ_node": "2🐕图像镜像翻转" }
-
 
 
 

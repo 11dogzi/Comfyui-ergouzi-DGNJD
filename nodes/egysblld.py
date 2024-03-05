@@ -64,5 +64,3 @@ class EGYSQYBLLDNode:
         
         result_tensor = pil_to_tensor(matched_target_pil)
         return (result_tensor,)
-NODE_CLASS_MAPPINGS = { "EG_YSQY_BLLD": EGYSQYBLLDNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_YSQY_BLLD": "2🐕图像迁移保留亮度" }

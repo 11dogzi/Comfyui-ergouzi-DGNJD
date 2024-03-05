@@ -85,9 +85,6 @@ class EGTSCDSRWLNode:
         prompt += ','
         return (prompt,) if prompt else ('',)
 
-NODE_CLASS_MAPPINGS = { "EG_TSCDS_RW" : EGTSCDSRWLNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_TSCDS_RW" : "2🐕提示词大师人物类" }
-
 
 
 

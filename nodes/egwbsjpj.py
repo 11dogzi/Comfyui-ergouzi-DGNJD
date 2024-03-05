@@ -63,5 +63,3 @@ class EGWBSJPJ:
         concatenated_text = re.sub(r'[，,]+$', '', concatenated_text)
         
         return (concatenated_text,)
-NODE_CLASS_MAPPINGS = { "EG_SJPJ_Node" : EGWBSJPJ }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_SJPJ_Node" : "2🐕文本随机拼接" }

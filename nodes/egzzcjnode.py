@@ -78,9 +78,6 @@ class EGTXZZCJNode:
         
         return (cropped_image_tensor, cropped_mask_tensor, (y0, y1, x0, x1))
 
-NODE_CLASS_MAPPINGS = { "ER_TX_ZZCJ": EGTXZZCJNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "ER_TX_ZZCJ": "2🐕图像遮罩区域裁剪" }
-
 
 
 

@@ -75,6 +75,3 @@ class EGXZQHNode:
         else:
             return (None,)
 
-NODE_CLASS_MAPPINGS = { "EG_XZ_QH" : EGXZQHNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_XZ_QH" : "2🐕按数字选择切换" }
-

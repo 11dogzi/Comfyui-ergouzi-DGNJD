@@ -49,6 +49,3 @@ class EGZZBSYH:
         blurred_mask = F.conv2d(binary_mask.unsqueeze(0), kernel, padding=kernel_size // 2, groups=1).squeeze(0)
         return (blurred_mask,)
 
-NODE_CLASS_MAPPINGS = {"EG_ZZ_BSYH": EGZZBSYH}
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_ZZ_BSYH" : "2🐕遮罩白色区域边缘模糊羽化" }
-

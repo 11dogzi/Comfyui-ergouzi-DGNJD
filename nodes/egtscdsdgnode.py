@@ -85,9 +85,6 @@ class EGTSCDSDGLNode:
         prompt += ','
         return (prompt,) if prompt else ('',)
 
-NODE_CLASS_MAPPINGS = { "EG_TSCDS_DG" : EGTSCDSDGLNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_TSCDS_DG" : "2🐕提示词大师灯光类" }
-
 
 
 

@@ -48,9 +48,6 @@ class EGZZSSKZNODE:
         
         return (expanded_mask_tensor, )
 
-NODE_CLASS_MAPPINGS = { "EG_ZZ_SSKZ": EGZZSSKZNODE }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_ZZ_SSKZ": "2🐕遮罩扩展收缩" }
-
 
 
 

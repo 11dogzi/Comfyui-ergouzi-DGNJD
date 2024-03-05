@@ -99,6 +99,3 @@ class EGBDAPINode:
         sign = hashlib.md5(sign).hexdigest()
         return sign
 
-NODE_CLASS_MAPPINGS = { "EG_FX_BDAPI" : EGBDAPINode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_FX_BDAPI" : "2🐕百度API翻译" }
-

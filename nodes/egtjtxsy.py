@@ -200,5 +200,3 @@ class EGCPSYTJNode:
 
         
         return (输入原图,)
-NODE_CLASS_MAPPINGS = { "EG_CPSYTJ": EGCPSYTJNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_CPSYTJ": "2🐕添加成品水印图像" }

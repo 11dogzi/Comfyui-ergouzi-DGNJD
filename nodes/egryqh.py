@@ -68,6 +68,3 @@ class EGRYQHNode:
       any_value = 输入06
     return (any_value,)
 
-NODE_CLASS_MAPPINGS = { "EG_WXZ_QH" : EGRYQHNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_WXZ_QH" : "2🐕无限制递归切换" }
-

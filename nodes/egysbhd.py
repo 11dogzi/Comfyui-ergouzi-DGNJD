@@ -63,7 +63,3 @@ class EGSCQYBHDQYYNode:
         result_tensor = pil_to_tensor(matched_target_pil)
         
         return (result_tensor,)
-
-    
-NODE_CLASS_MAPPINGS = { "EG_SCQY_BHDQY": EGSCQYBHDQYYNode }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_SCQY_BHDQY": "2🐕图像饱和度迁移" }

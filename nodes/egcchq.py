@@ -25,6 +25,3 @@ class EGTXCCHQ:
         else:
             height, width = image_in.shape[-2], image_in.shape[-1]
         return (width, height)
-
-NODE_CLASS_MAPPINGS = { "EG_TX_CCHQ" : EGTXCCHQ }
-NODE_DISPLAY_NAME_MAPPINGS = { "EG_TX_CCHQ" : "2🐕图像尺寸获取" } 
