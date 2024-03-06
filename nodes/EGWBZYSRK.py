@@ -1,0 +1,26 @@
+import torch
+class EGZYWBKNode:
+    def __init__(self):
+        pass
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "自由输入": ("STRING", {
+                    "multiline": True,
+                    "default": ""
+                }),
+            }
+        }
+    RETURN_TYPES = ("INT", "FLOAT", "STRING")
+    RETURN_NAMES = ("整数", "浮点", "文本")
+    FUNCTION = "convert_number_types"
+    CATEGORY = "2🐕/文本"
+    def convert_number_types(self, 自由输入):
+        try:
+            float_num = float(自由输入)
+            int_num = int(float_num)
+            str_num = 自由输入
+        except ValueError:
+            return (None, None, 自由输入)
+        return (int_num, float_num, str_num)
