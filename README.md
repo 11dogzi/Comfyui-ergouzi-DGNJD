@@ -102,6 +102,7 @@ Mirror Flip
  ## 常规遮罩处理节点：
 Regular mask processing nodes:   
 ![常规遮罩](docs/5遮罩处理.png "5遮罩处理")   
+![常规遮罩](docs/5遮罩处理2.png "5遮罩处理2")   
 ![常规遮罩](docs/5遮罩羽化.png "5遮罩羽化")  
 
  ## 百度翻译API：
