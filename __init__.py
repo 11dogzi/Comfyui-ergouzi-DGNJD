@@ -42,6 +42,7 @@ from .nodes.EGSZJDYS import EGSZCGJS
 from .nodes.EGSZHZ import EGSSRYZH
 from .nodes.EGWBZYSRK import EGZYWBKNode
 from .nodes.EGZZTXHZ import EGTXZZZHNode
+from .PainterNode.painter_node import PainterNodeZWB
 
 # A dictionary that contains all nodes you want to export with their names
 # NOTE: names should be globally unique
@@ -90,6 +91,8 @@ NODE_CLASS_MAPPINGS = {
     "EG_SS_RYZH" : EGSSRYZH,
     "EG_ZY_WBK" : EGZYWBKNode,
     "EG_TXZZ_ZH" : EGTXZZZHNode,
+    "PainterNodeZWB" : PainterNodeZWB,
+
 }
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
@@ -138,4 +141,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_SS_RYZH" : "2🐕整数浮点字符串格式转换",
     "EG_ZY_WBK" : "2🐕自由输入框",
     "EG_TXZZ_ZH" : "2🐕互转遮罩图像",
+    "PainterNodeZWB" : "2🐕AlekPet画板中文版",
 }
