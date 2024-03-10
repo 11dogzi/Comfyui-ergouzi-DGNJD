@@ -44,6 +44,8 @@ from .nodes.EGWBZYSRK import EGZYWBKNode
 from .nodes.EGZZTXHZ import EGTXZZZHNode
 from .PainterNode.painter_node import PainterNodeZWB
 from .nodes.EGJBCHBMQ import EGJBCH
+from .nodes.EGLATENTBISC import EGKLATENT
+from .nodes.EGTXSFBLS import EGTXSFBLSNode
 
 NODE_CLASS_MAPPINGS = {
     "EG_FX_BDAPI": EGBDAPINode,
@@ -92,7 +94,8 @@ NODE_CLASS_MAPPINGS = {
     "EG_TXZZ_ZH" : EGTXZZZHNode,
     "PainterNodeZWB" : PainterNodeZWB,
     "ER_JBCH": EGJBCH,
-
+    "EG_TX_SFBLS" : EGTXSFBLSNode,
+    "EG_K_LATENT" : EGKLATENT,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -142,4 +145,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_TXZZ_ZH" : "2🐕互转遮罩图像",
     "PainterNodeZWB" : "2🐕AlekPet画板中文版",
     "ER_JBCH": "2🐕重绘模式选择内补编码器",
+    "EG_TX_SFBLS" : "2🐕图像缩放比例锁",
+    "EG_K_LATENT" : "2🐕空Latent比例生成器",
 }
