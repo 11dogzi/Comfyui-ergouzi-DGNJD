@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 from torchvision import transforms
 from skimage import exposure
-from skimage.transform import resize  # 确保添加了这一行
+from skimage.transform import resize
 
 
 def tensor_to_pil(img_tensor, batch_index=0):
@@ -59,14 +59,12 @@ class EGSCQYQBQYNode:
         source_np = np.array(source_pil)
         target_np = np.array(target_pil)
     
-        # 直方图匹配
         matched_target_np = np.empty_like(target_np)
         for i in range(source_np.shape[-1]):
             matched_target_np[:, :, i] = exposure.match_histograms(
                 target_np[:, :, i], source_np[:, :, i]
             )
     
-        # 根据迁移强度调整最终结果
         result_np = (1 - 迁移强度 / 100) * target_np + (迁移强度 / 100) * matched_target_np
         result_pil = Image.fromarray(result_np.astype(np.uint8))
     
