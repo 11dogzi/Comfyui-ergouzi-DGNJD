@@ -28,17 +28,42 @@ class EGSCQYBHDQYYNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "source_image": ("IMAGE",),  
-                "target_image": ("IMAGE",),  
+                "迁移图": ("IMAGE",),  
+                "目标图": ("IMAGE",),  
             },
         }
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("result_image",)
     FUNCTION = "transfer_saturation"
     CATEGORY = "2🐕/图像/色彩处理"
-    def transfer_saturation(self, source_image, target_image):
-        source_pil = tensor_to_pil(source_image)
-        target_pil = tensor_to_pil(target_image)
+class EGSCQYBHDQYYNode:
+    def __init__(self):
+        pass
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "迁移图": ("IMAGE",),
+                "目标图": ("IMAGE",),
+            },
+            "optional": {
+                "迁移强度": ("FLOAT", {
+                    "default": 50,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "precision": 100,
+                    "display": "slider"
+                }),
+            }
+        }
+    RETURN_TYPES = ("IMAGE",)
+    RETURN_NAMES = ("result_image",)
+    FUNCTION = "transfer_saturation"
+    CATEGORY = "2🐕/图像/色彩处理"
+    def transfer_saturation(self, 迁移图, 目标图, 迁移强度=50):
+        source_pil = tensor_to_pil(迁移图)
+        target_pil = tensor_to_pil(目标图)
         source_size = source_pil.size
         target_size = target_pil.size
         
@@ -53,8 +78,11 @@ class EGSCQYBHDQYYNode:
         source_hsv = cv2.cvtColor(source_np, cv2.COLOR_RGB2HSV)
         target_hsv = cv2.cvtColor(target_np, cv2.COLOR_RGB2HSV)
         
+        # 根据迁移强度调整饱和度
+        saturation_adjusted = (1 - 迁移强度 / 100) * target_hsv[:, :, 1] + (迁移强度 / 100) * source_hsv[:, :, 1]
+        
         matched_target_hsv = target_hsv.copy()
-        matched_target_hsv[:, :, 1] = source_hsv[:, :, 1]
+        matched_target_hsv[:, :, 1] = np.clip(saturation_adjusted, 0, 255)  # 确保饱和度值在0到255之间
         
         matched_target_rgb = cv2.cvtColor(matched_target_hsv, cv2.COLOR_HSV2RGB)
         
