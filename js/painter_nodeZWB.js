@@ -240,8 +240,8 @@ class Painter {
         </div>
     </div>
     <div class="painter_history_panel comfy-menu-btns">
-      <button id="历史撤销" title="Undo" disabled>⟲</button>
-      <button id="历史重做" title="Redo" disabled>⟳</button>
+      <button id="历史撤销" title="撤销" disabled>⟲</button>
+      <button id="历史重做" title="重做" disabled>⟳</button>
     </div> 
     `;
 
