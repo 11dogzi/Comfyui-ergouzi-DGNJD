@@ -42,11 +42,12 @@ from .nodes.EGSZJDYS import EGSZCGJS
 from .nodes.EGSZHZ import EGSSRYZH
 from .nodes.EGWBZYSRK import EGZYWBKNode
 from .nodes.EGZZTXHZ import EGTXZZZHNode
-from .PainterNode.painter_node import PainterNodeZWB
 from .nodes.EGJBCHBMQ import EGJBCH
 from .nodes.EGLATENTBISC import EGKLATENT
 from .nodes.EGTXSFBLS import EGTXSFBLSNode
 from .nodes.EGTXSXJZ import EGLJJZTXDZ
+from .PainterNode.painter_node import PainterNodeZWB
+from .PainterNode import painter_node
 
 NODE_CLASS_MAPPINGS = {
     "EG_FX_BDAPI": EGBDAPINode,
@@ -93,11 +94,11 @@ NODE_CLASS_MAPPINGS = {
     "EG_SS_RYZH" : EGSSRYZH,
     "EG_ZY_WBK" : EGZYWBKNode,
     "EG_TXZZ_ZH" : EGTXZZZHNode,
-    "PainterNodeZWB" : PainterNodeZWB,
     "ER_JBCH": EGJBCH,
     "EG_TX_SFBLS" : EGTXSFBLSNode,
     "EG_K_LATENT" : EGKLATENT,
     "EG_LJ_JZTXDZ" : EGLJJZTXDZ,
+    "PainterNodeZWB" : PainterNodeZWB,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -145,9 +146,9 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_SS_RYZH" : "2🐕整数浮点字符串格式转换",
     "EG_ZY_WBK" : "2🐕自由输入框",
     "EG_TXZZ_ZH" : "2🐕互转遮罩图像",
-    "PainterNodeZWB" : "2🐕AlekPet画板中文版",
     "ER_JBCH": "2🐕重绘模式选择内补编码器",
     "EG_TX_SFBLS" : "2🐕图像缩放比例锁",
     "EG_K_LATENT" : "2🐕空Latent比例生成器",
     "EG_LJ_JZTXDZ" : "2🐕单张顺序随机加载图像",
+    "PainterNodeZWB" : "2🐕AlekPet画板中文版",
 }

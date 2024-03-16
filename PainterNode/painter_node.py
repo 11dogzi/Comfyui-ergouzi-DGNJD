@@ -1,14 +1,4 @@
-#本代码原作者为AlekPet，本节点仅为中文翻译节点，翻译人B站@灵仙儿和二狗子#
-#Author: AlekPet#
-#Github: https://github.com/AlekPet/ComfyUI_Custom_Nodes_AlekPet#
-import hashlib
-import json
-from server import PromptServer
-from aiohttp import web
-from PIL import Image, ImageOps
-import torch
-import numpy as np
-import folder_paths
+#本节点原作者AlekPet，翻译人二狗子
 import os
 import importlib.util
 import subprocess
@@ -218,10 +208,25 @@ def installNodes():
             # Add missing or updates files
             addFilesToFolder(js_folder, web_extensions_dir, nodeElement)
             addFilesToFolder(lib_folder, folder__web_lib, nodeElement)
+
+            # Loading node info
+            printColorInfo(f"Node -> {nodeElement} [Loading]")
+
             checkModules(nodeElement)
             addComfyUINodesToMapping(nodeElement)
 
+
 installNodes()
+
+import hashlib
+import os
+import json
+from server import PromptServer
+from aiohttp import web
+from PIL import Image, ImageOps
+import torch
+import numpy as np
+import folder_paths
 
 # Directory node save settings
 CHUNK_SIZE = 1024

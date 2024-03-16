@@ -1,5 +1,5 @@
-//本代码原作者为AlekPet，本节点仅为中文翻译节点，翻译人B站@灵仙儿和二狗子
 /*
+ *本节点由AlekPet翻译，翻译人：二狗子
  * Title: PainterNode ComflyUI from ControlNet
  * Author: AlekPet
  * Version: 2023.12.13
@@ -65,18 +65,18 @@ function showHide({ elements = [], hide = null }) {
   });
 }
 
-window.LS_Painters_zwb = {};
+window.LS_Painters = {};
 function LS_Save() {
   if (painters_settings_json) {
     saveData();
   } else {
-    localStorage.setItem("ComfyUI_Painter_zwb", JSON.stringify(LS_Painters_zwb));
+    localStorage.setItem("ComfyUI_Painter", JSON.stringify(LS_Painters));
   }
 }
 // ================= END FUNCTIONS ================
 
 // ================= CLASS PAINTER ================
-class Painterzwb {
+class Painter {
   constructor(node, canvas) {
     this.originX = 0;
     this.originY = 0;
@@ -99,8 +99,8 @@ class Painterzwb {
     this.undo_history = [];
     this.redo_history = [];
 
-    // this.undo_history = LS_Painters_zwb[node.name].undo_history || [];
-    // this.redo_history = LS_Painters_zwb[node.name].redo_history || [];
+    // this.undo_history = LS_Painters[node.name].undo_history || [];
+    // this.redo_history = LS_Painters[node.name].redo_history || [];
 
     this.fonts = {
       Arial: "arial",
@@ -180,7 +180,7 @@ class Painterzwb {
             <button id="zpos_SendToBack" title="移到顶部">移到底部</button>
             <button id="zpos_BringFrontSelected" title="将点击选择的图像移动到顶部" class="${
               this.bringFrontSelected ? "active" : ""
-            }">点击移动顶部</button>
+            }">随点击移动</button>
         </div>
     </div>
     <div class="painter_drawning_box_property">
@@ -407,8 +407,8 @@ class Painterzwb {
     }
 
     if (!this.mode) {
-      target.textContent = "切换画图工具";
-      target.title = "Enable drawing mode";
+      target.textContent = "切换到画板界面";
+      target.title = "切换到画板功能界面";
       this.viewListObjects(this.list_objects_panel__items);
       showHide({
         elements: [
@@ -422,8 +422,8 @@ class Painterzwb {
       this.painter_shapes_box_modify.appendChild(this.painter_colors_box);
       this.painter_shapes_box_modify.appendChild(this.painter_stroke_box);
     } else {
-      target.textContent = "切换图层管理";
-      target.title = "Enable selection mode";
+      target.textContent = "切换到图层界面";
+      target.title = "切换图层管理面板";
       showHide({
         elements: [
           this.manipulation_box,
@@ -819,7 +819,7 @@ class Painterzwb {
         let inputSize;
         let correct = false;
         while (!correct) {
-          inputSize = +prompt(`输入画布 ${prop}:`, defaultVal);
+          inputSize = +prompt(`Enter canvas ${prop}:`, defaultVal);
           if (
             Number(inputSize) === inputSize &&
             inputSize % 1 === 0 &&
@@ -831,8 +831,8 @@ class Painterzwb {
         }
       }
 
-      let width = checkSized("宽度", this.currentCanvasSize.width),
-        height = checkSized("高度", this.currentCanvasSize.height);
+      let width = checkSized("width", this.currentCanvasSize.width),
+        height = checkSized("height", this.currentCanvasSize.height);
 
       this.setCanvasSize(width, height);
       this.uploadPaintFile(this.node.name);
@@ -1111,12 +1111,12 @@ class Painterzwb {
   canvasSaveSettingsPainter() {
     try {
       const data = this.canvas.toJSON();
-      if (LS_Painters_zwb && LS_Painters_zwb.hasOwnProperty(this.node.name)) {
-        LS_Painters_zwb[this.node.name].canvas_settings = painters_settings_json
+      if (LS_Painters && LS_Painters.hasOwnProperty(this.node.name)) {
+        LS_Painters[this.node.name].canvas_settings = painters_settings_json
           ? data
           : JSON.stringify(data);
 
-        LS_Painters_zwb[this.node.name].settings["currentCanvasSize"] =
+        LS_Painters[this.node.name].settings["currentCanvasSize"] =
           this.currentCanvasSize;
 
         LS_Save();
@@ -1152,15 +1152,15 @@ class Painterzwb {
   canvasLoadSettingPainter() {
     try {
       if (
-        LS_Painters_zwb &&
-        LS_Painters_zwb.hasOwnProperty(this.node.name) &&
-        LS_Painters_zwb[this.node.name].hasOwnProperty("canvas_settings")
+        LS_Painters &&
+        LS_Painters.hasOwnProperty(this.node.name) &&
+        LS_Painters[this.node.name].hasOwnProperty("canvas_settings")
       ) {
         const data =
-          typeof LS_Painters_zwb[this.node.name] === "string" ||
-          LS_Painters_zwb[this.node.name] instanceof String
-            ? JSON.parse(LS_Painters_zwb[this.node.name])
-            : LS_Painters_zwb[this.node.name];
+          typeof LS_Painters[this.node.name] === "string" ||
+          LS_Painters[this.node.name] instanceof String
+            ? JSON.parse(LS_Painters[this.node.name])
+            : LS_Painters[this.node.name];
         this.setCanvasLoadData(data);
         this.addToHistory();
       }
@@ -1409,8 +1409,8 @@ function PainterWidget(node, inputName, inputData, app) {
   node.addCustomWidget(widget);
 
   node.onRemoved = () => {
-    if (Object.hasOwn(LS_Painters_zwb, node.name)) {
-      delete LS_Painters_zwb[node.name];
+    if (Object.hasOwn(LS_Painters, node.name)) {
+      delete LS_Painters[node.name];
       LS_Save();
     }
 
@@ -1505,7 +1505,7 @@ async function saveData() {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(LS_Painters_zwb),
+      body: JSON.stringify(LS_Painters),
     });
     if (rawResponse.status !== 200)
       throw new Error(`Error painter save settings: ${rawResponse.statusText}`);
@@ -1772,8 +1772,8 @@ app.registerExtension({
       PainerNode.map((n) => {
         console.log(`Setup PainterNodeZWB: ${n.name}`);
         let widgetImage = n.widgets.find((w) => w.name == "image");
-        if (widgetImage && Object.hasOwn(LS_Painters_zwb, n.name)) {
-          const painter_ls = LS_Painters_zwb[n.name];
+        if (widgetImage && Object.hasOwn(LS_Painters, n.name)) {
+          const painter_ls = LS_Painters[n.name];
           painter_ls.hasOwnProperty("objects_canvas") &&
             delete painter_ls.objects_canvas; // remove old property
           n.painter.canvasLoadSettingPainter();
@@ -1789,16 +1789,16 @@ app.registerExtension({
           "Loading",
           "Please wait, <span style='font-weight: bold; color: orange'>Painter node</span> settings are loading. Loading times may take a long time if large images have been added to the canvas!"
         );
-        LS_Painters_zwb = await loadData();
+        LS_Painters = await loadData();
         document.body.removeChild(message);
       } else {
-        LS_Painters_zwb =
-          localStorage.getItem("ComfyUI_Painter_zwb") &&
-          JSON.parse(localStorage.getItem("ComfyUI_Painter_zwb"));
+        LS_Painters =
+          localStorage.getItem("ComfyUI_Painter") &&
+          JSON.parse(localStorage.getItem("ComfyUI_Painter"));
 
-        if (!LS_Painters_zwb || LS_Painters_zwb === undefined) {
-          localStorage.setItem("ComfyUI_Painter_zwb", JSON.stringify({}));
-          LS_Painters_zwb = JSON.parse(localStorage.getItem("ComfyUI_Painter_zwb"));
+        if (!LS_Painters || LS_Painters === undefined) {
+          localStorage.setItem("ComfyUI_Painter", JSON.stringify({}));
+          LS_Painters = JSON.parse(localStorage.getItem("ComfyUI_Painter"));
         }
       }
 
@@ -1817,8 +1817,8 @@ app.registerExtension({
 
         console.log(`Create PainterNodeZWB: ${nodeName}`);
 
-        if (LS_Painters_zwb && !Object.hasOwn(LS_Painters_zwb, nodeNamePNG)) {
-          LS_Painters_zwb[nodeNamePNG] = {
+        if (LS_Painters && !Object.hasOwn(LS_Painters, nodeNamePNG)) {
+          LS_Painters[nodeNamePNG] = {
             undo_history: [],
             redo_history: [],
             canvas_settings: { background: "#000000" },
@@ -1830,11 +1830,11 @@ app.registerExtension({
         PainterWidget.apply(this, [this, nodeNamePNG, {}, app]);
         setTimeout(() => {
           if (
-            LS_Painters_zwb.hasOwnProperty(nodeNamePNG) &&
-            LS_Painters_zwb[nodeNamePNG]?.settings?.currentCanvasSize
+            LS_Painters.hasOwnProperty(nodeNamePNG) &&
+            LS_Painters[nodeNamePNG]?.settings?.currentCanvasSize
           ) {
             this.painter.currentCanvasSize =
-              LS_Painters_zwb[nodeNamePNG].settings.currentCanvasSize;
+              LS_Painters[nodeNamePNG].settings.currentCanvasSize;
 
             this.painter.setCanvasSize(
               this.painter.currentCanvasSize.width,
