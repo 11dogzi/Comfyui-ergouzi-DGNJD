@@ -48,6 +48,8 @@ from .nodes.EGTXSFBLS import EGTXSFBLSNode
 from .nodes.EGTXSXJZ import EGLJJZTXDZ
 from .PainterNode.painter_node import PainterNodeZWB
 from .nodes.EGZZTXYSJ import EGTXFT
+from .nodes.EGZZJDYH import EGZZMH
+from .nodes.EGZZJDYHHT import EGZZMHHT
 
 NODE_CLASS_MAPPINGS = {
     "EG_FX_BDAPI": EGBDAPINode,
@@ -100,6 +102,8 @@ NODE_CLASS_MAPPINGS = {
     "EG_LJ_JZTXDZ" : EGLJJZTXDZ,
     "PainterNodeZWB" : PainterNodeZWB,
     "EG_FSFT" : EGTXFT,
+    "EG_ZZ_MH" : EGZZMH,
+    "EG_ZZ_MHHT" : EGZZMHHT,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -152,5 +156,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_K_LATENT" : "2🐕空Latent比例生成器",
     "EG_LJ_JZTXDZ" : "2🐕单张顺序随机加载图像",
     "PainterNodeZWB" : "2🐕AlekPet画板中文版",
-    "EG_FSFT" : "2🐕图像加载元数据",
+    "EG_FSFT" : "2🐕图像选择加载",
+    "EG_ZZ_MH" : "2🐕遮罩边缘快速模糊",
+    "EG_ZZ_MHHT" : "2🐕遮罩边缘滑条快速模糊",
 }
