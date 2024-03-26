@@ -35,7 +35,7 @@ class EGTMTX:
                 "mask": ("MASK",),
             },
             "optional": {
-                "遮罩反转": (["yes", "no"],),
+                "遮罩反转": (["no", "yes"],),
             },
         }
 
