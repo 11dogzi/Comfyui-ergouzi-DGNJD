@@ -46,28 +46,29 @@ ROTATE_OPTIONS = ["按文本 居中", "按图像 居中"]
 JUSTIFY_OPTIONS = ["居中", "左", "右"]
 PERSPECTIVE_OPTIONS = ["上", "下", "左", "右"]
 
-def 竖向初始位置_text(竖向初始位置, img_height, text_height, text_pos_y, margins):
-    if 竖向初始位置 == "居中":
+def align_text(align, img_height, text_height, text_pos_y, margins):
+    if align == "居中":
         text_plot_y = img_height / 2 - text_height / 2 + text_pos_y
-    elif 竖向初始位置 == "上":
+    elif align == "上":
         text_plot_y = 0 + text_pos_y
-    elif 竖向初始位置 == "下":
+    elif align == "下":
         text_plot_y = img_height - text_height + text_pos_y
     return text_plot_y
 
 def get_text_size(draw, text, font):
     bbox = draw.textbbox((0, 0), text, font=font)
 
+    # Calculate the text width and height
     text_width = bbox[2] - bbox[0]
     text_height = bbox[3] - bbox[1]
     return text_width, text_height
 
-def 横向初始位置_text(横向初始位置, img_width, line_width, margins):
-    if 横向初始位置 == "左":
+def justify_text(justify, img_width, line_width, margins):
+    if justify == "左":
         text_plot_x = 0 + margins
-    elif 横向初始位置 == "右":
+    elif justify == "右":
         text_plot_x = img_width - line_width - margins
-    elif 横向初始位置 == "居中":
+    elif justify == "居中":
         text_plot_x = img_width/2 - line_width/2 + margins
     return text_plot_x
 
@@ -80,6 +81,7 @@ def 六进制_to_rgb(六进制_颜色):
 
 def get_颜色_values(颜色, 颜色_六进制, 颜色_mapping):
     
+    #Get RGB values for the text and background 颜色s.
     if 颜色 == "自定义":
         颜色_rgb = 六进制_to_rgb(颜色_六进制)
     else:
@@ -93,53 +95,67 @@ def pil2tensor(image):
     return torch.from_numpy(np.array(image).astype(np.float32) / 255.0).unsqueeze(0) 
 
 def draw_masked_text(text_mask, text,
-                     font_name, font_size, font_opacity,
-                     margins, 行间距,
-                     横向偏移, 竖向偏移,
-                     竖向初始位置, 横向初始位置,
+                     font_name, font_size,
+                     margins, line_spacing,
+                     position_x, position_y, 
+                     align, justify,
                      rotation_angle, rotation_options):
     
-    text_mask = Image.new('RGBA', text_mask.size, (255, 255, 255, 0))  # 创建一个带有Alpha通道的白色图像
+    # Create the drawing context        
     draw = ImageDraw.Draw(text_mask)
-    
+
+    # Define font settings
     font_folder = "fonts"
     font_file = os.path.join(font_folder, font_name)
     resolved_font_path = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), font_file)
-    font = ImageFont.truetype(resolved_font_path, size=font_size)
-    
-    image_width = text_mask.size[0]
-    
-    image_height = text_mask.size[1]
-    
+    font = ImageFont.truetype(str(resolved_font_path), size=font_size) 
+
+     # Split the input text into lines
     text_lines = text.split('\n')
-    
+
+    # Calculate the size of the text plus padding for the tallest line
     max_text_width = 0
     max_text_height = 0
+
     for line in text_lines:
-        w, h = draw.textsize(line, font=font)
-        max_text_width = max(max_text_width, w)
-        max_text_height = max(max_text_height, h + 行间距)
+        # Calculate the width and height of the current line
+        line_width, line_height = get_text_size(draw, line, font)
+ 
+        line_height = line_height + line_spacing
+        max_text_width = max(max_text_width, line_width)
+        max_text_height = max(max_text_height, line_height)
     
-    text_x = 横向偏移
-    text_y = 竖向偏移
-    
-    text_plot_y = 竖向初始位置_text(竖向初始位置, image_width, max_text_height * len(text_lines), text_y, margins)
-    text_plot_x = 横向初始位置_text(横向初始位置, image_width, max_text_width, margins) + text_x
-    
+    # Get the image width and height
+    image_width, image_height = text_mask.size
+    按图像_居中_x = image_width / 2
+    按图像_居中_y = image_height / 2
+
+    text_pos_y = position_y
+    sum_text_plot_y = 0
+    text_height = max_text_height * len(text_lines)
+
     for line in text_lines:
-        w, h = draw.textsize(line, font=font)
-        current_y = text_plot_y
-        draw.text((text_plot_x, current_y), line, font=font, fill=(255, 255, 255, font_opacity))
-        text_plot_y += h + 行间距
-    
-    if rotation_angle != 0:
-        if rotation_options == "按文本 居中":
-            rotated_text_mask = text_mask.rotate(rotation_angle, center=(text_x + max_text_width / 2, text_y / 2))
-        elif rotation_options == "按图像 居中":    
-            rotated_text_mask = text_mask.rotate(rotation_angle, center=(image_width / 2, image_height / 2))
-    else:
-        rotated_text_mask = text_mask
-    
+        # Calculate the width of the current line
+        line_width, _ = get_text_size(draw, line, font)
+                            
+        # Get the text x and y positions for each line                                     
+        text_plot_x = position_x + justify_text(justify, image_width, line_width, margins)
+        text_plot_y = align_text(align, image_height, text_height, text_pos_y, margins)
+        
+        # Add the current line to the text mask
+        draw.text((text_plot_x, text_plot_y), line, fill=255, font=font)
+        
+        text_pos_y += max_text_height  # Move down for the next line
+        sum_text_plot_y += text_plot_y     # Sum the y positions
+
+    # Calculate 居中s for rotation
+    按文本_居中_x = text_plot_x + max_text_width / 2
+    按文本_居中_y = sum_text_plot_y / len(text_lines)
+
+    if rotation_options == "按文本 居中":
+        rotated_text_mask = text_mask.rotate(rotation_angle, center=(按文本_居中_x, 按文本_居中_y))
+    elif rotation_options == "按图像 居中":    
+        rotated_text_mask = text_mask.rotate(rotation_angle, center=(按图像_居中_x, 按图像_居中_y))
     return rotated_text_mask
 
 class EGYSZTNode:
@@ -151,25 +167,19 @@ class EGYSZTNode:
         return {"required": {
                     "背景生成宽度": ("INT", {"default": 512, "min": 64, "max": 20000}),
                     "背景生成高度": ("INT", {"default": 512, "min": 64, "max": 20000}),
-                    "text": ("STRING", {"multiline": True, "default": "请输入需要生成的水印文字,本插件字体均为网络公开资源字体，仅供学习交流使用，如需商用请自行更换商用字体，字体存放路径为Comfyui-ergouzi-DGNJD\fonts文件夹，更多SD教程尽在B站灵仙儿和二狗子🐕"}),
+                    "text": ("STRING", {"multiline": True, "default": "请输入需要生成的水印文字,本插件字体均为网络公开资源字体，仅供学习交流使用，如需商用请自行更换商用字体，字体存放路径为插件内的fonts文件夹，更多SD教程尽在B站灵仙儿和二狗子🐕"}),
                     "选择字体": (file_list,),
                     "字体大小": ("INT", {"default": 50, "min": 1, "max": 1024}),
                     "字体颜色": (COLORS,),
                     "背景颜色": (COLORS,),
-                    "竖向初始位置": (ALIGN_OPTIONS,),
-                    "横向初始位置": (JUSTIFY_OPTIONS,),
+                    "竖向位置": (ALIGN_OPTIONS,),
+                    "横向位置": (JUSTIFY_OPTIONS,),
                     "文字页边距": ("INT", {"default": 0, "min": -1024, "max": 1024}),
-                    "行间距": ("INT", {"default": 0, "min": -1024, "max": 1024}),
+                    "文字行间距": ("INT", {"default": 0, "min": -1024, "max": 1024}),
                     "横向偏移": ("INT", {"default": 0, "min": -20000, "max": 20000}),
                     "竖向偏移": ("INT", {"default": 0, "min": -20000, "max": 20000}),
                     "旋转角度": ("FLOAT", {"default": 0.0, "min": -360.0, "max": 360.0, "step": 0.1}),
                     "旋转中心": (ROTATE_OPTIONS,),
-                    "字体透明度": ("INT", {
-                        "default": 255, 
-                        "min": 0, 
-                        "max": 255, 
-                        "display": "slider"
-                     }),
                 },
                 "optional": {
                     "字体_颜色_六进制": ("STRING", {"multiline": False, "default": "#000000"}),
@@ -181,32 +191,38 @@ class EGYSZTNode:
     RETURN_NAMES = ("输出图像",)
     FUNCTION = "draw_text"
     CATEGORY = "2🐕/水印大师"
-    def draw_text(self, 背景生成宽度, 背景生成高度, text,
+    def draw_text(self, 背景生成宽度,背景生成高度, text,
                   选择字体, 字体大小, 字体颜色,
                   背景颜色,
-                  文字页边距, 行间距,
+                  文字页边距,文字行间距,
                   横向偏移, 竖向偏移,
-                  竖向初始位置, 横向初始位置,
+                  竖向位置, 横向位置,
                   旋转角度, 旋转中心,
-                  字体_颜色_六进制='#000000', 背景_颜色_六进制='#000000', 输入原图=None,
-                  字体透明度=255):
-        font_opacity = 字体透明度
+                  字体_颜色_六进制='#000000', 背景_颜色_六进制='#000000', 输入原图=None):
+        # Get RGB values for the text and background 颜色s
         text_颜色 = get_颜色_values(字体颜色, 字体_颜色_六进制, 颜色_mapping)
         bg_颜色 = get_颜色_values(背景颜色, 背景_颜色_六进制, 颜色_mapping)
+        # Determine the size based on the input 输入原图 or the provided dimensions
         if 输入原图 is not None:
+            # If an 输入原图 is provided, use its size
             back_输入原图 = tensor2pil(输入原图)  # Assuming tensor2pil converts a tensor to PIL Image
             size = back_输入原图.size
         else:
+            # If no 输入原图 is provided, use the provided dimensions
             size = (背景生成宽度, 背景生成高度)
             back_输入原图 = Image.new('RGB', size, bg_颜色)
+        # Create PIL 输入原图s for the text and background layers and text mask
         text_输入原图 = Image.new('RGB', size, text_颜色)
         text_mask = Image.new('L', back_输入原图.size)
-        rotated_text_mask = draw_masked_text(text_mask, text, 选择字体, 字体大小, font_opacity,
-                                             文字页边距, 行间距,  # 确保传递了行间距参数
+        # Draw the text on the text mask
+        rotated_text_mask = draw_masked_text(text_mask, text, 选择字体, 字体大小,
+                                             文字页边距, 文字行间距,
                                              横向偏移, 竖向偏移,
-                                             竖向初始位置, 横向初始位置,
+                                             竖向位置, 横向位置,
                                              旋转角度, 旋转中心)
+        # Composite the text 输入原图 onto the background 输入原图 using the rotated text mask
         输入原图_out = Image.composite(text_输入原图, back_输入原图, rotated_text_mask)
+        # Convert the PIL 输入原图 back to a torch tensor
         return (pil2tensor(输入原图_out),)
 
 
