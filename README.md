@@ -123,8 +123,8 @@ Bilibili space for Lingxian'er and Ergouzi, welcome to visit:
 Welcome to our QQ channel, click here to enter:   
 [二狗子的QQ频道](https://pd.qq.com/s/3d9ys5wpr)   
 ![LOGO](docs/LOGO1.png "LOGO1")![LOGO](docs/LOGO1.png "LOGO1")![LOGO](docs/LOGO1.png "LOGO1")    
-本套插件版权所属，未经授权静止一切性质的商用行为
-ps：插件已申请版权保护，粉丝们可以个人使用！但禁止个别割韭菜行为的售卖工作流及安装包。如需商用请申请授权书！
+## 本套插件版权所属，未经授权静止一切性质的商用行为    
+## ps：插件已申请版权保护，粉丝们可以个人使用！但禁止个别割韭菜行为的售卖工作流及安装包。如需商用请申请授权书！
 
 
 
