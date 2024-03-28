@@ -64,3 +64,5 @@ class EGZZHBCJNode:
         合并遮罩_tensor = pil2tensor(合并遮罩)
         合并遮罩图_tensor = pil2tensor(合并遮罩)
         return [合并遮罩_tensor, 合并遮罩图_tensor]
+
+# 本套插件版权所属B站@灵仙儿和二狗子，仅供学习交流使用，未经授权禁止一切商业性质使用

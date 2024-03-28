@@ -24,3 +24,4 @@ class EGZYWBKNode:
         except ValueError:
             return (None, None, 自由输入)
         return (int_num, float_num, str_num)
+# 本套插件版权所属B站@灵仙儿和二狗子，仅供学习交流使用，未经授权禁止一切商业性质使用

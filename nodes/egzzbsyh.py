@@ -49,3 +49,5 @@ class EGZZBSYH:
         blurred_mask = F.conv2d(binary_mask.unsqueeze(0), kernel, padding=kernel_size // 2, groups=1).squeeze(0)
         return (blurred_mask,)
 
+
+# 本套插件版权所属B站@灵仙儿和二狗子，仅供学习交流使用，未经授权禁止一切商业性质使用

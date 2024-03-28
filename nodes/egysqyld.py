@@ -62,3 +62,5 @@ class EGYSQYBBLLDNode:
         
         result_tensor = pil_to_tensor(matched_target_pil)
         return (result_tensor,)
+
+# 本套插件版权所属B站@灵仙儿和二狗子，仅供学习交流使用，未经授权禁止一切商业性质使用

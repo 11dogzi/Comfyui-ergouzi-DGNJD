@@ -68,3 +68,5 @@ class EGTXSFBLSNode:
             return_width = width
             return_height = height
         return (s, return_width, return_height)
+
+# 本套插件版权所属B站@灵仙儿和二狗子，仅供学习交流使用，未经授权禁止一切商业性质使用
