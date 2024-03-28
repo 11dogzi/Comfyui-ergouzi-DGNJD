@@ -51,6 +51,7 @@ from .nodes.EGZZTXYSJ import EGTXFT
 from .nodes.EGZZJDYH import EGZZMH
 from .nodes.EGZZJDYHHT import EGZZMHHT
 from .nodes.EGZZTMTX import EGTMTX
+from .nodes.EGZZFQTC import EGJFZZTC
 
 NODE_CLASS_MAPPINGS = {
     "EG_FX_BDAPI": EGBDAPINode,
@@ -106,6 +107,7 @@ NODE_CLASS_MAPPINGS = {
     "EG_ZZ_MH" : EGZZMH,
     "EG_ZZ_MHHT" : EGZZMHHT,
     "EG_ZZ_TMTX" : EGTMTX,
+    "EG_JF_ZZTC" : EGJFZZTC,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -162,4 +164,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_ZZ_MH" : "2🐕遮罩边缘快速模糊",
     "EG_ZZ_MHHT" : "2🐕遮罩边缘滑条快速模糊",
     "EG_ZZ_TMTX" : "2🐕透明图像裁剪",
+    "EG_JF_ZZTC" : "2🐕遮罩分块填充",
 }
