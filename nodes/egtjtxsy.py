@@ -121,20 +121,10 @@ class EGCPSYTJNode:
         
         r, g, b, a = 输入水印.split()
         a = a.point(lambda x: max(0, int(x * (1 - 水印透明度 / 100))))
-        输入水印.putalpha(a)
-        
-        
-        print(f"Alignment value received: {初始位置}")
-        
-        
-        print(f"Base Image Size: {输入原图.size()}")
-        
-        print(f"Overlay Image Size: {输入水印.size}")
+        输入水印.putalpha(a)  
         
         输入原图_缩放宽度, 输入原图_缩放高度 = 输入原图.size()[2], 输入原图.size()[1]
         输入水印_缩放宽度, 输入水印_缩放高度 = 输入水印.size
-        
-        print(f"Original 横向位移: {横向位移}, 竖向位移: {竖向位移}")
         
         
         横向位移_int = None

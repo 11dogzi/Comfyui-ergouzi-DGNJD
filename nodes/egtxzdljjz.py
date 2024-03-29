@@ -59,7 +59,10 @@ class EGJZRYTX:
                     mask_tensor = torch.from_numpy(mask)[None, None, :, :]
             
                     if fill_color == 'white':
-                        image_rgba.putalpha(255)
+                        for y in range(image_rgba.height):
+                            for x in range(image_rgba.width):
+                                if image_rgba.getpixel((x, y))[3] == 0:
+                                    image_rgba.putpixel((x, y), (255, 255, 255, 255))
                     elif fill_color == 'gray':
                         for y in range(image_rgba.height):
                             for x in range(image_rgba.width):
