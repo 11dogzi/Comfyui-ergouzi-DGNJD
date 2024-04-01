@@ -54,6 +54,7 @@ from .nodes.EGZZJDYHHT import EGZZMHHT
 from .nodes.EGZZTMTX import EGTMTX
 from .nodes.EGZZFQTC import EGJFZZTC
 from .nodes.EGZZBYCJ import EGZZRH
+from .nodes.EGJUCHCYQ import EGCYQJB
 
 NODE_CLASS_MAPPINGS = {
     "EG_FX_BDAPI": EGBDAPINode,
@@ -111,6 +112,7 @@ NODE_CLASS_MAPPINGS = {
     "EG_ZZ_TMTX" : EGTMTX,
     "EG_JF_ZZTC" : EGJFZZTC,
     "EG_ZZ_RH" : EGZZRH,
+    "EG_CYQ_JB" : EGCYQJB,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -169,6 +171,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_ZZ_TMTX" : "2🐕透明图像裁剪",
     "EG_JF_ZZTC" : "2🐕遮罩分块填充",
     "EG_ZZ_RH" : "2🐕遮罩边缘检测",
+    "EG_CYQ_JB" : "2🐕局部重绘采样器" ,
 }
 
 red_statement = "Comfyui-ergouzi-DGNJD：本套插件版权所属B站@灵仙儿和二狗子，仅供学习交流使用，未经授权禁止一切商业性质使用"
