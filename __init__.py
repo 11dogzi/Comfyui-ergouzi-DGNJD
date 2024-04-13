@@ -47,7 +47,6 @@ from .nodes.EGJBCHBMQ import EGJBCH
 from .nodes.EGLATENTBISC import EGKLATENT
 from .nodes.EGTXSFBLS import EGTXSFBLSNode
 from .nodes.EGTXSXJZ import EGLJJZTXDZ
-from .PainterNode.painter_node import PainterNodeZWB
 from .nodes.EGZZTXYSJ import EGTXFT
 from .nodes.EGZZJDYH import EGZZMH
 from .nodes.EGZZJDYHHT import EGZZMHHT
@@ -55,6 +54,7 @@ from .nodes.EGZZTMTX import EGTMTX
 from .nodes.EGZZFQTC import EGJFZZTC
 from .nodes.EGZZBYCJ import EGZZRH
 from .nodes.EGJUCHCYQ import EGCYQJB
+from .nodes.egtscdssrjknode import EGTSCDSSRJKNode
 
 NODE_CLASS_MAPPINGS = {
     "EG_FX_BDAPI": EGBDAPINode,
@@ -105,7 +105,6 @@ NODE_CLASS_MAPPINGS = {
     "EG_TX_SFBLS" : EGTXSFBLSNode,
     "EG_K_LATENT" : EGKLATENT,
     "EG_LJ_JZTXDZ" : EGLJJZTXDZ,
-    "PainterNodeZWB" : PainterNodeZWB,
     "EG_FSFT" : EGTXFT,
     "EG_ZZ_MH" : EGZZMH,
     "EG_ZZ_MHHT" : EGZZMHHT,
@@ -113,6 +112,7 @@ NODE_CLASS_MAPPINGS = {
     "EG_JF_ZZTC" : EGJFZZTC,
     "EG_ZZ_RH" : EGZZRH,
     "EG_CYQ_JB" : EGCYQJB,
+    "EG_TSCDS_SRJK" : EGTSCDSSRJKNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -164,7 +164,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_TX_SFBLS" : "2🐕图像缩放比例锁",
     "EG_K_LATENT" : "2🐕空Latent比例生成器",
     "EG_LJ_JZTXDZ" : "2🐕单张顺序随机加载图像",
-    "PainterNodeZWB" : "2🐕AlekPet画板中文版",
     "EG_FSFT" : "2🐕图像选择加载",
     "EG_ZZ_MH" : "2🐕遮罩边缘快速模糊",
     "EG_ZZ_MHHT" : "2🐕遮罩边缘滑条快速模糊",
@@ -172,6 +171,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_JF_ZZTC" : "2🐕遮罩分块填充",
     "EG_ZZ_RH" : "2🐕遮罩边缘检测",
     "EG_CYQ_JB" : "2🐕局部重绘采样器" ,
+    "EG_TSCDS_SRJK" : "2🐕提示词大师素人极客类" ,
 }
 
 red_statement = "Comfyui-ergouzi-DGNJD：本套插件版权所属B站@灵仙儿和二狗子，仅供学习交流使用，未经授权禁止一切商业性质使用"
