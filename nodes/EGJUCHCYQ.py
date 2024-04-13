@@ -5,6 +5,8 @@ import comfy.samplers
 import comfy.sample
 import torch
 import math
+import base64
+from colorama import Fore
 from typing import Tuple, Dict, Any
 from PIL import Image, ImageFilter
 import numpy as np
@@ -46,6 +48,15 @@ def mask2image(input_mask_pil):
     input_mask_tensor = pil2tensor(input_mask_pil)
     result_tensor = input_mask_tensor.expand(-1, 3, -1, -1)
     return result_tensor
+
+statement = '77ya55Sx5LqO5pys5aWX5o+S5Lu25Li65a6a5Yi25ZWG55So5o+S5Lu277yM54mI5p2D5omA5bGe77yM5LuF5L6bQuermSfngbXku5nlhL/lkozkuozni5flrZAn57KJ5Lid5Liq5Lq66L+b6KGM5a2m5Lmg5Lqk5rWB5L2/55So77yM5pyq57uP5o6I5p2D56aB5q2i5LiA5YiH5ZWG5Lia5oCn6LSo5ZSu5Y2W5L2/55So'
+EGSMWBA = base64.b64decode(statement.encode('utf-8')).decode('utf-8')
+tstatement='Q29tZnl1aS1lcmdvdXppLURHTkpE'
+EGSMWBB = base64.b64decode(tstatement.encode('utf-8')).decode('utf-8')
+
+red_part = EGSMWBB
+yellow_part = EGSMWBA.replace(red_part, "")
+print(Fore.RED + red_part + Fore.YELLOW + yellow_part + Fore.RESET)
 
 class EGCYQJB:
     def __init__(self):

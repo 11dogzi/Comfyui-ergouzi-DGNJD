@@ -1,4 +1,3 @@
-from colorama import Fore
 from .nodes.egbdfy import EGBDAPINode
 from .nodes.egcchq import EGTXCCHQ
 from .nodes.egcgysqy import EGSCQYQBQYNode
@@ -173,9 +172,3 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_CYQ_JB" : "2🐕局部重绘采样器" ,
     "EG_TSCDS_SRJK" : "2🐕提示词大师素人极客类" ,
 }
-
-red_statement = "Comfyui-ergouzi-DGNJD：本套插件版权所属B站@灵仙儿和二狗子，仅供学习交流使用，未经授权禁止一切商业性质使用"
-red_part = "Comfyui-ergouzi-DGNJD："
-yellow_part = red_statement.replace(red_part, "")
-
-print(Fore.RED + red_part + Fore.YELLOW + yellow_part + Fore.RESET)
