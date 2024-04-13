@@ -1,11 +1,5 @@
 # My Project
 
-This project is a derivative work based on several open source projects:
-
-1. rgthree-comfy by rgthree (https://github.com/rgthree/rgthree-comfy)
-2. ComfyUI-Custom-Scripts by pythongosssss (https://github.com/pythongosssss/ComfyUI-Custom-Scripts)
-3. ComfyUI-Mixlab-Nodes by shadowcz007 (https://github.com/shadowcz007/comfyui-mixlab-nodes)
-
 Copyright (c) 2023 11dog（二狗子）
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,14 +28,6 @@ Additional restrictions:
 
 - The software includes self-written code parts that cannot be sold, rented, or distributed separately or as part of derivative works without the author's express written consent.
 
-
-这个项目是基于几个开源项目的衍生作品：
-
-1.rgthree由rgthree舒适(https://github.com/rgthree/rgthree-comfy)
-
-2.CompyUI自定义脚本by pythongossss(https://github.com/pythongosssss/ComfyUI-Custom-Scripts)
-
-3.shadowcz007的ComfyUI Mixrab节点(https://github.com/shadowcz007/comfyui-mixlab-nodes)
 
 版权所有（c）2023 11dog(二狗子）
 
