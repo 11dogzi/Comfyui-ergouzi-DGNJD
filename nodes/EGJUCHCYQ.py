@@ -49,7 +49,7 @@ def mask2image(input_mask_pil):
     result_tensor = input_mask_tensor.expand(-1, 3, -1, -1)
     return result_tensor
 
-statement = 'OuacrOWll+aPkuS7tuS4uueyieS4neS4k+S6q++8jOemgeatouS7u+S9leS4quS6uuWbouS9k+WFrOWPuOWVhuS4muWUruWNlueahOWJsumfreiPnOihjOS4uizmm7TlpJpTROWFjei0ueaVmeeoi+WwveWcqELnq5lA54G15LuZ5YS/5ZKM5LqM54uX5a2Q'
+statement = 'Ouino+mUgeabtOWkmuWunei0teaXtuWFie+8jOWOu+WBmuabtOacieaEj+S5ieeahOS6i+aDhe+8jOi/meaJjeaYr0FJLS0tLS0tLS1C56uZQOeBteS7meWEv+WSjOS6jOeLl+WtkA=='
 EGSMWBA = base64.b64decode(statement.encode('utf-8')).decode('utf-8')
 tstatement='Q29tZnl1aS1lcmdvdXppLURHTkpE'
 EGSMWBB = base64.b64decode(tstatement.encode('utf-8')).decode('utf-8')
