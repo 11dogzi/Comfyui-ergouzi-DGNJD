@@ -38,6 +38,10 @@ from .nodes.egtxystz import EGHTYSTZNode
 from .nodes.egtxwhlj import EGWHLJ
 from .nodes.egzzcjpj import EGZZHBCJNode
 from .nodes.EGJDFDHT import EGRYHT
+from .nodes.EGJDFDHTA import EGRYHTA
+from .nodes.EGJDFDHTB import EGRYHTB
+from .nodes.EGJDFDHTC import EGRYHTC
+from .nodes.EGJDFDHTD import EGRYHTD
 from .nodes.EGSZJDYS import EGSZCGJS
 from .nodes.EGSZHZ import EGSSRYZH
 from .nodes.EGWBZYSRK import EGZYWBKNode
@@ -96,6 +100,10 @@ NODE_CLASS_MAPPINGS = {
     "EG_TX_WHLJ" : EGWHLJ,
     "EG_ZZHBCJ" : EGZZHBCJNode,
     "EG_RY_HT" : EGRYHT,
+    "EG_RY_HTA" : EGRYHTA,
+    "EG_RY_HTB" : EGRYHTB,
+    "EG_RY_HTC" : EGRYHTC,
+    "EG_RY_HTD" : EGRYHTD,
     "EG_SZ_CGJS" : EGSZCGJS,
     "EG_SS_RYZH" : EGSSRYZH,
     "EG_ZY_WBK" : EGZYWBKNode,
@@ -155,6 +163,10 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_TX_WHLJ" : "2🐕网红滤镜",
     "EG_ZZHBCJ" : "2🐕遮罩任意裁剪拼接",
     "EG_RY_HT" : "2🐕权重滑条",
+    "EG_RY_HTA" : "2🐕权重滑条0-1",
+    "EG_RY_HTB" : "2🐕权重滑条B-1-1",
+    "EG_RY_HTC" : "2🐕权重滑条-180-180",
+    "EG_RY_HTD" : "2🐕权重滑条0-2",
     "EG_SZ_CGJS" : "2🐕+-x÷常规计算",
     "EG_SS_RYZH" : "2🐕整数浮点字符串格式转换",
     "EG_ZY_WBK" : "2🐕自由输入框",
