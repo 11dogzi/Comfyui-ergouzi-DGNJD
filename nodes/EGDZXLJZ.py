@@ -52,7 +52,7 @@ class SequentialImageLoader:
                     img_path = os.path.join(input_folder, selected_filename)
 
                     if selected_filename not in self.images_cache:
-                        image = Image.open(img_path).convert('RGBA')
+                        image = Image.open(img_path).convert('RGB')
                         self.images_cache[selected_filename] = image
                     else:
                         image = self.images_cache[selected_filename]
@@ -66,4 +66,5 @@ class SequentialImageLoader:
 
         except Exception as e:
             return None, None
+
 
