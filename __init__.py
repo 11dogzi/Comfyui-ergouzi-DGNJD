@@ -56,6 +56,7 @@ from .nodes.EGJUCHCYQ import EGCYQJB
 from .nodes.egtscdssrjknode import EGTSCDSSRJKNode
 from .nodes.EGDZXLJZ import SequentialImageLoader
 from .nodes.EGXLWBBC import SaveTextToFile
+from .nodes.EGSSCJJ import EGSSCJJ
 
 NODE_CLASS_MAPPINGS = {
     "EG_FX_BDAPI": EGBDAPINode,
@@ -116,6 +117,7 @@ NODE_CLASS_MAPPINGS = {
     "EG_TSCDS_SRJK" : EGTSCDSSRJKNode,
     "SequentialImageLoader": SequentialImageLoader,
     "SaveTextToFile": SaveTextToFile,
+    "EGSSCJJ": EGSSCJJ
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -176,5 +178,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_CYQ_JB" : "2🐕局部重绘采样器",
     "EG_TSCDS_SRJK" : "2🐕提示词大师素人极客类",
     "SequentialImageLoader": "2🐕单张加载训练集图像",
-    "SaveTextToFile": "2🐕训练tag保存"
+    "SaveTextToFile": "2🐕训练tag保存",
+    "EGSSCJJ": "Comfyui实时抽奖机"
 }
