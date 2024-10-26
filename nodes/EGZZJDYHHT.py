@@ -26,13 +26,14 @@ class EGZZMHHT:
     CATEGORY = "2🐕/遮罩/模糊羽化"
     INPUT_IS_LIST = False
     OUTPUT_IS_LIST = (False,)
-    def maskmohu(self,mask,模糊强度):
-        print('SmoothMask',mask.shape)
-        mask=tensortopil(mask)
+    def maskmohu(self, mask, 模糊强度):
+        if 模糊强度 == 0:
+            return (mask,)
+        
+        print('SmoothMask', mask.shape)
+        mask = tensortopil(mask)
         feathered_image = mask.filter(ImageFilter.GaussianBlur(模糊强度))
-
-        mask=piltotensor(feathered_image)
-           
+        mask = piltotensor(feathered_image)
+        
         return (mask,)
-
 # 本套插件版权所属B站@灵仙儿和二狗子，仅供学习交流使用，未经授权禁止一切商业性质使用

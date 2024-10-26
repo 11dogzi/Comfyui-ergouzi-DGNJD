@@ -39,27 +39,20 @@ class EGZZKZHTNODE:
     CATEGORY = "2🐕/遮罩"
 
     def mask_expand_shrink(self, 输入遮罩, 左收缩右扩展):
+        if 左收缩右扩展 == 0:
+            return (输入遮罩,)
+        
         输入遮罩 = tensor2pil(输入遮罩)
         expand_shrink_value = 左收缩右扩展
         
-        
         mask_array = np.array(输入遮罩) > 0  
         
-        
         if expand_shrink_value > 0:
-            
             expanded_mask_array = binary_dilation(mask_array, iterations=expand_shrink_value)
-        elif expand_shrink_value < 0:
-            
-            expanded_mask_array = binary_erosion(mask_array, iterations=-expand_shrink_value)
         else:
-            
-            expanded_mask_array = mask_array
-        
+            expanded_mask_array = binary_erosion(mask_array, iterations=-expand_shrink_value)
         
         expanded_mask = Image.fromarray((expanded_mask_array * 255).astype(np.uint8))
-        
-        
         expanded_mask_tensor = pil2tensor(expanded_mask)
         
         return (expanded_mask_tensor, )
