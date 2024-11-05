@@ -57,6 +57,8 @@ from .nodes.egtscdssrjknode import EGTSCDSSRJKNode
 from .nodes.EGDZXLJZ import SequentialImageLoader
 from .nodes.EGXLWBBC import SaveTextToFile
 from .nodes.EGSSCJJ import EGSSCJJ
+from .nodes.EGdcpd import FindFirstMatchNode
+from .nodes.EGsjdc import EGRandomWordNode
 
 NODE_CLASS_MAPPINGS = {
     "EG_FX_BDAPI": EGBDAPINode,
@@ -117,7 +119,9 @@ NODE_CLASS_MAPPINGS = {
     "EG_TSCDS_SRJK" : EGTSCDSSRJKNode,
     "SequentialImageLoader": SequentialImageLoader,
     "SaveTextToFile": SaveTextToFile,
-    "EGSSCJJ": EGSSCJJ
+    "EGSSCJJ": EGSSCJJ,
+    "FindFirstMatchNode": FindFirstMatchNode,
+    "EGRandomWordNode": EGRandomWordNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -179,5 +183,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "EG_TSCDS_SRJK" : "2🐕提示词大师素人极客类",
     "SequentialImageLoader": "2🐕单张加载训练集图像",
     "SaveTextToFile": "2🐕训练tag保存",
-    "EGSSCJJ": "Comfyui实时抽奖机"
+    "EGSSCJJ": "Comfyui实时抽奖机",
+    "FindFirstMatchNode": "2🐕单词判定",
+    "EGRandomWordNode": "2🐕单词随机"
 }
