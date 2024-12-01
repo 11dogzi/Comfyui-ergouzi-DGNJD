@@ -59,6 +59,8 @@ from .nodes.EGXLWBBC import SaveTextToFile
 from .nodes.EGSSCJJ import EGSSCJJ
 from .nodes.EGdcpd import FindFirstMatchNode
 from .nodes.EGsjdc import EGRandomWordNode
+from .nodes.NineGridMosaicNode import NineGridMosaicNode
+from .nodes.GridMosaicNode import GridMosaicNode
 
 NODE_CLASS_MAPPINGS = {
     "EG_FX_BDAPI": EGBDAPINode,
@@ -122,6 +124,8 @@ NODE_CLASS_MAPPINGS = {
     "EGSSCJJ": EGSSCJJ,
     "FindFirstMatchNode": FindFirstMatchNode,
     "EGRandomWordNode": EGRandomWordNode,
+    "GridMosaicNode": GridMosaicNode,
+    "NineGridMosaicNode": NineGridMosaicNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -185,5 +189,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "SaveTextToFile": "2🐕训练tag保存",
     "EGSSCJJ": "Comfyui实时抽奖机",
     "FindFirstMatchNode": "2🐕单词判定",
-    "EGRandomWordNode": "2🐕单词随机"
+    "EGRandomWordNode": "2🐕单词随机",
+    "NineGridMosaicNode": "2🐕单张宫格",
+    "GridMosaicNode": "2🐕批次宫格"
 }
