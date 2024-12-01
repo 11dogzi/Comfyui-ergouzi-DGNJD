@@ -3,6 +3,7 @@ import torch
 from PIL import Image, ImageDraw
 import numpy as np
 import math
+import random
 
 def tensor2pil(image):
     return Image.fromarray(np.clip(255. * image.cpu().numpy().squeeze(), 0, 255).astype(np.uint8))
@@ -39,8 +40,10 @@ class NineGridMosaicNode:
                 "列数": ("INT", {"default": 3, "min": 1, "max": 16}),
                 "接缝颜色": ("COLOR", {"default": "#ffffff"}),
                 "接缝宽度": ("INT", {"default": 2, "min": 0, "max": 50}),
+                "随机排序": ("BOOLEAN", {"default": False}),
             },
             "optional": {
+                "随机种子": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
                 "图像2": ("IMAGE",),
                 "图像3": ("IMAGE",),
                 "图像4": ("IMAGE",),
@@ -57,9 +60,15 @@ class NineGridMosaicNode:
     FUNCTION = "create_nine_grid"
     CATEGORY = "2🐕/图像/拼接"
 
-    def create_nine_grid(self, 图像1, 行数, 列数, 接缝颜色, 接缝宽度, 图像2=None, 图像3=None, 图像4=None, 
+    def create_nine_grid(self, 图像1, 行数, 列数, 接缝颜色, 接缝宽度, 随机排序, 随机种子=None, 图像2=None, 图像3=None, 图像4=None, 
                         图像5=None, 图像6=None, 图像7=None, 图像8=None, 图像9=None):
         images = [img for img in [图像1, 图像2, 图像3, 图像4, 图像5, 图像6, 图像7, 图像8, 图像9] if img is not None]
+        
+        if 随机排序:
+            if 随机种子 is not None:
+                random.seed(随机种子)
+            random.shuffle(images)
+        
         image_count = len(images)
         first_image = tensor2pil(图像1)
         width, height = first_image.size

@@ -23,7 +23,11 @@ class GridMosaicNode:
                 "列数": ("INT", {"default": 2, "min": 1, "max": 16}),
                 "接缝颜色": ("COLOR", {"default": "#ffffff"}),
                 "接缝宽度": ("INT", {"default": 2, "min": 0, "max": 50}),
+                "随机排序": ("BOOLEAN", {"default": False}),
             },
+            "optional": {
+                "随机种子": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
+            }
         }
 
     RETURN_TYPES = ("IMAGE",)
@@ -31,10 +35,20 @@ class GridMosaicNode:
     FUNCTION = "create_grid_mosaic"
     CATEGORY = "2🐕/图像/拼接"
 
-    def create_grid_mosaic(self, 批次图像, 行数, 列数, 接缝颜色, 接缝宽度):
+    def create_grid_mosaic(self, 批次图像, 行数, 列数, 接缝颜色, 接缝宽度, 随机排序, 随机种子=None):
         if len(批次图像.shape) == 3:  # 单张图片
             批次图像 = 批次图像.unsqueeze(0)
         batch_size = 批次图像.shape[0]
+        
+        # 添加随机排序逻辑
+        if 随机排序:
+            if 随机种子 is not None:
+                generator = torch.Generator().manual_seed(随机种子)
+                indices = torch.randperm(batch_size, generator=generator)
+            else:
+                indices = torch.randperm(batch_size)
+            批次图像 = 批次图像[indices]
+        
         first_image = tensor2pil(批次图像[0])
         width, height = first_image.size
         grid_rows = 行数
