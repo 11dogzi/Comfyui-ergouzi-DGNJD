@@ -1,3 +1,10 @@
+import os
+import sys
+
+# 设置web目录路径
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+WEB_DIRECTORY = os.path.join(CURRENT_DIR, "web")
+
 from .nodes.egbdfy import EGBDAPINode
 from .nodes.egcchq import EGTXCCHQ
 from .nodes.egcgysqy import EGSCQYQBQYNode
