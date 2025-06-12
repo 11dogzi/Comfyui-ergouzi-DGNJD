@@ -4,8 +4,8 @@ class EGRYHTC:
         return {"required": {
                     "浮点权重": ("FLOAT", {
                         "default": 0,
-                        "min": -180,
-                        "max": 180,
+                        "min": 1,
+                        "max": 10,
                         "step":1,
                         "display": "slider"
                     }),
