@@ -1,13 +1,7 @@
 import importlib.util
 import os
 from pathlib import Path
-current_file_path = Path(__file__).resolve()
-current_directory = current_file_path.parent
-folder_paths_directory = current_directory.parent.parent.parent / "folder_paths.py"
-spec = importlib.util.spec_from_file_location("folder_paths", str(folder_paths_directory))
-folder_paths = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(folder_paths)
-from folder_paths import *
+import folder_paths
 from PIL import Image, ImageOps, ImageSequence, PngImagePlugin
 from PIL.ExifTags import TAGS
 import numpy as np
